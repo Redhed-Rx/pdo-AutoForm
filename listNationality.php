@@ -29,14 +29,15 @@ $allNationality=$sql->fetchAll();
                 echo "<td class=\"col-md-2\">$nationality->num</td>";
                 echo "<td class=\"col-md-8\">$nationality->libelle</td>";
                 echo "<td class=\"col-md-2\">
-                    <a href=\"formNationality.php?action=Modif&num=$nationality->num\" class=\"btn btn-info\"><i class=\"fas fa-pen\"></i></a>
-                    <a href=\"\" class=\"btn btn-danger\"><i class=\"fas fa-trash-alt\"></i></a>
+                    <a href=\"formNationality.php?action=Modifier&num=$nationality->num\" class=\"btn btn-info\"><i class=\"fas fa-pen\"></i></a>
+                    <a href='#modalSuppr' data-toggle=\"modal\" data-message='Voulez vous supprimer cette nationalité' data-suppr='supprNationality.php?num=$nationality->num' class=\"btn btn-danger\"><i class=\"fas fa-trash-alt\"></i></a>
                 </td>";
                 echo "</tr>";
             }
         ?>
         </tbody>
     </table>
+    
 </div>
 
 <?php include "footer.php";?>
