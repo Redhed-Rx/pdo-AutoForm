@@ -58,7 +58,7 @@
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-mobile"></i> iPhone</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
           <a class="dropdown-item" href="listNationality.php">iPhone 11 series</a>
-          <a class="dropdown-item" href="#">iPhone XS series</a>
+          <a class="dropdown-item" href="formAjoutNationality.php">iPhone XS series</a>
           <a class="dropdown-item" href="#">iPhone SE series</a>
         </div>
       </li>
