@@ -4,14 +4,17 @@ include "connexionPDO.php";
 $libelle=$_POST['libelle']; // je recupere le libellé du formulaire
 $num=$_POST['num']; // je recupere le libellé du formulaire
 $action=$_GET['action'];
+$continent=$_POST['continent'];
 
 if($action == "Modifier"){
-    $sql=$bdd->prepare("update nationalite set libelle = :libelle where num = :num");
-    $sql->bindParam(':libelle', $libelle);
+    $sql=$bdd->prepare("update nationalite set libelle = :libelle, numContient= :continent where num = :num");
     $sql->bindParam(':num', $num);
-}else{
-    $sql=$bdd->prepare("insert into nationalite(libelle) values(:libelle)");
     $sql->bindParam(':libelle', $libelle);
+    $sql->bindParam(':continent', $continent);
+}else{
+    $sql=$bdd->prepare("insert into nationalite(libelle, numContinent) values(:libelle, :continent)");
+    $sql->bindParam(':libelle', $libelle);
+    $sql->bindParam(':continent', $continent);
 }
 $nb=$sql->execute();
 $message= $action == "Modifier" ? "modifiée" : "ajoutée";//ifelse en une ligne
